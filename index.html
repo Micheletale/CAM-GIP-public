@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAM didattico GIP — Simulatore G-code</title>
+    <script type="module" crossorigin src="./assets/index-Owkn3J3I.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-KjDaf7xF.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <h1>CAM didattico GIP — Simulatore G-code</h1>
+        <div class="controls">
+          <label class="field">
+            <span>Macchina</span>
+            <select id="machine">
+              <option value="mill">Fresa 3 assi</option>
+              <option value="lathe">Tornio 2 assi</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Esempio</span>
+            <select id="example"></select>
+          </label>
+          <button id="simulate" type="button" aria-label="Simula">Simula</button>
+        </div>
+      </header>
+      <div class="layout">
+      <main class="workspace">
+        <section class="pane editor-pane" aria-label="Programma">
+          <div id="editor" class="editor"></div>
+        </section>
+        <section class="pane plot-pane" aria-label="Backplot">
+          <div class="view">
+            <div id="plot" class="plot"></div>
+            <ul class="legend" aria-hidden="true">
+              <li><i class="sw rapid"></i>Rapido</li>
+              <li><i class="sw feed"></i>Lavoro</li>
+              <li><i class="sw thread"></i>Filetto</li>
+            </ul>
+          </div>
+          <div id="transport" class="transport" role="group" aria-label="Riproduzione"></div>
+        </section>
+      </main>
+      <aside class="side">
+        <section class="panel" data-testid="dro">
+          <h2>Stato macchina</h2>
+          <div id="dro"></div>
+        </section>
+        <section id="cycle-time" class="panel" data-testid="cycle-time"></section>
+        <section id="job" class="panel job-panel" data-testid="job"></section>
+      </aside>
+      <section class="alarm-pane" aria-label="Allarmi">
+        <h2>Allarmi</h2>
+        <div id="alarms" data-testid="alarms" class="alarms"></div>
+      </section>
+      </div>
+      <footer>© 2026 Dr. Michele Abruzzo · Università di Pisa, DICI · Gestione Integrata della Produzione. Tutti i diritti riservati.</footer>
+    </div>
+  </body>
+</html>
